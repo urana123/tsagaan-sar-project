@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" id="sign-up">
+            <h1 class="form__title">Бүртгэл үүсгэх</h1>
+            <div class="form__input-group">
+                <input type="text" id='sign-email' class="form__input" autofocus placeholder="Username or email">
+            </div>
+            <div class="form__input-group">
+                <input type="password" id='sign-password' class="form__input" autofocus placeholder="Password">
+            </div>
+            <button class="form__button" id="sign-up-btn" type="submit">Үргэлжлүүлэх</button>
+        </form>
+    </div>
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAKmUsr7BzNM1FdVsp74qN_uXXLdUCtBOg",
+        authDomain: "reaction-game-90561.firebaseapp.com",
+        databaseURL: "https://reaction-game-90561-default-rtdb.firebaseio.com",
+        projectId: "reaction-game-90561",
+        storageBucket: "reaction-game-90561.appspot.com",
+        messagingSenderId: "182927717832",
+        appId: "1:182927717832:web:28e1548b6fa95b17923cfd"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+</script>
+
+
+<script>
+    const signUp = document.querySelector('#sign-up')
+    signUp.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = signUp['sign-email'].value
+        const password = signUp['sign-password'].value
+
+        console.log(email, password)
+
+        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+            console.log('amjilttai burtgul uusev -->  ', cred)
+            sendVerificationEmail()
+        })
+    })
+
+    const sendVerificationEmail = () => {
+        auth.currentUser.sendEmailVerification().then(() => {})
+    }
+</script>
+
+</html>

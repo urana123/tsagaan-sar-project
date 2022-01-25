@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./family-tree.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="drop-nav flex  center">
+        <div class="column center" style="flex: 1;">
+            <a href="./family-tree.html">
+                <i class="fa fa-tree" style="font-size:76px; color: rgb(15, 187, 15);"></i>
+            </a>
+        </div>
+        <div class="column center" style="flex: 1;">
+            <a href="./family-admin.html">
+                <i class="fa fa-user" style="font-size:76px; color: rgb(15, 187, 15);"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="container column">
+
+        <div class="row between" style="height: 15%; padding: 0px 80px;">
+            <div class="row center logo">
+                <div>
+                    <img src="./tree-mori.png" width="40px" height="" alt="">
+                </div>
+                <h1>Tsagaan Sar</h1>
+            </div>
+            <i class="fa fa-bars" onclick="dropNavFun(event, 'fa-close')" style="font-size:36px; color: white;"></i>
+            <i class="fa fa-close" onclick="dropNavFun(event, 'fa-bars')" style="font-size:36px; color: white; display: none;"></i>
+        </div>
+
+
+
+
+        <div class="column center" style="width: 100%;">
+            <div class="main-body">
+
+                <!-- <img id="head-img" src="./tree-head-branch.png" width="25%" alt=""> -->
+                <img id="img-left1" src="./tree-branch-left.png" width="47%" alt="">
+                <img id="img-right1" src="./tree-branch-right.png" width="47%" alt="">
+                <img id="img-right2" src="./tree-branch-right.png" width="47%" alt="">
+                <img id="img-left2" src="./tree-branch-left.png" width="47%" alt="">
+                <img id="img-root" src="./tree-root.png" height="50%" alt="">
+                <div id="ground"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNUxIz17vobrvs4KI-GeRul_zL_5fCay4",
+            authDomain: "chuluu-chat.firebaseapp.com",
+            projectId: "chuluu-chat",
+            storageBucket: "chuluu-chat.appspot.com",
+            messagingSenderId: "872184827877",
+            appId: "1:872184827877:web:7077143b748b778542290c"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().languageCode = 'mn'
+        const db = firebase.firestore();
+    </script>
+
+    <script src="./family-tree.js"></script>
+
+</body>
+
+</html>

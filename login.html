@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsagaan sar</title>
+    <link rel="stylesheet" href="login.css">
+
+    <!-- login css ee yvuulaachee -->
+
+</head>
+
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+    </div>
+    <div class="container">
+        <form class="form" id='login'>
+            <h1 class="form__title">Нэвтрэх</h1>
+            <div class="form__input-group">
+                <input type="text" id='login-email' class="form__input" required autofocus placeholder="Username or email">
+            </div>
+            <div class="form__input-group">
+                <input type="password" id='login-password' class="form__input" required autofocus placeholder="Password">
+            </div>
+            <button class="form__button" id="login-btn" type="submit">Нэвтрэх</button>
+            <p class="form__text">
+                <a class="form__link" id="linkCreateAccount">Бүртгэл үүсгэх</a>
+            </p>
+        </form>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAKmUsr7BzNM1FdVsp74qN_uXXLdUCtBOg",
+            authDomain: "reaction-game-90561.firebaseapp.com",
+            databaseURL: "https://reaction-game-90561-default-rtdb.firebaseio.com",
+            projectId: "reaction-game-90561",
+            storageBucket: "reaction-game-90561.appspot.com",
+            messagingSenderId: "182927717832",
+            appId: "1:182927717832:web:28e1548b6fa95b17923cfd"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script>
+        const login = document.querySelector('#login')
+        const linkCreateAccount = document.querySelector('#linkCreateAccount')
+        linkCreateAccount.onclick = () => {
+            window.location.assign(`./signup.html?=${docID}`)
+        }
+
+        login.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = login['login-email'].value
+            const password = login['login-password'].value
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    var user = userCredential.user;
+                    console.log('amjilttai newterlee -->  ', user)
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log(errorCode)
+                });
+        })
+    </script>
+</body>
+
+</html>

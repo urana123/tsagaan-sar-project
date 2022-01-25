@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./guess-number-of-Shagai.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="tailbar flex center" style="z-index: -1;" onclick="done('tailbar')">
+        <div onclick="event.stopPropagation()" class="tailbar-div column">
+
+            <i class="fa fa-close close-icon" style="font-size:36px; cursor: pointer;" onclick="done('tailbar')"></i>
+
+            <div class=" flex center" style="height: 20%;">
+                <h1 style="font-size: 60px;">Шагай таах</h1>
+            </div>
+
+            <div class="row">
+                <div class="" style="width: 50%;margin: 30px;">
+                    <img src="./guess-big-pic.png" width="100%" style="margin: auto; border-radius: 16px;" alt="">
+
+                </div>
+                <div class="flex column" style="width: 50%;">
+                    <p>- 2 хүн тоглоно.</p>
+                    <p>- 2 хүн тус тус 10, 10н шагаатай.</p>
+                    <p>- Хамгийн ихдээ 5 шагай сонгох боломжтой.</p>
+                    <img src="./guess-gray-1.png" width="200px" alt="">
+                    <p>-Хэдэн шагай авахаа сонгоно</p>
+                    <img src="./guess-gray-2.png" width="200px" alt="">
+                    <p>-Үүний дараа</p>
+                    <img src="./guess-done-btn.png" width="30px" alt="">
+                    <p>- Энэ товчин дээр дарснаар цааш тоглож болох юм</p>
+                    <img src="./guess-gray-3.png" width="200px" alt="">
+                    <p>- 2лаа ээлжлэн дурын чулуугаа гартаа авч дараа нь нөгөө хүний гарт байгаа чулууг таана.</p>
+                    <p>- Хэрвээ чулууг хэд байгааг тааж чадвал таасан чулуугаа авна энэ мэтчилэн тоглоно.</p>
+                    <p>- Түрүүлж 20 чулуутай болсон үед ялна.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="invite flex center" onclick="done('invite')">
+        <div class="invite-div column" onclick="event.stopPropagation()">
+
+            <div class="flex center" style="font-weight: bold; font-size: 30px;">
+                Invite Your Friend
+            </div>
+            <div class="flex center">
+                <div class="href">
+                    <div id="invitation" class="center flex"></div>
+                    <i class="fa fa-copy btnCopy" id="copyIcon" onclick="copyFunction()" style="font-size:26px;"></i>
+                    <i class="fa fa-check btnCopy" id="checkIcon" style="font-size:26px; display: none;"></i>
+                </div>
+            </div>
+            <div class="flex j-end">
+                <div class="done" onclick="done('invite')" style="cursor: pointer;">
+                    done
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container column" style="z-index: 0;">
+        <div class="flex between a-center" style="height: 50px;">
+            <div class="row a-center" style="font-size: 28px;">
+                <img width="50px" style="margin-right: 5px;" height="50px" src="./guess-mori.png" alt=""> Цагаан Сар
+            </div>
+            <div onclick="backFun()" style="cursor: pointer;">
+                Back
+            </div>
+        </div>
+        <div class="column centeral">
+            <div class="flex j-end" style="padding: 5px 0px; width: 100%;">
+                <div style="padding: 10px 25px; background-color: white; border-radius: 16px; cursor: pointer;" onclick="tailbarFun('tailbar')">Тайлбар</div>
+            </div>
+            <div class="main-body flex1 flex">
+
+                <!-- <div class="winning row between" style="padding: 0px 30px;">
+                    <p>Uranchimeg Win Yeyy &#127881;</p>
+                    <p>You Loose </p>
+                </div> -->
+
+
+            </div>
+            <div class="between flex" style="padding: 5px 0px; width: 100%;">
+                <div class="row">
+                    <p>Нийт шагай:&nbsp;</p>
+                    <p class="realNumberEnemy">15</p>
+                </div>
+                <div class="row">
+                    <p>Нийт шагай:&nbsp;</p>
+                    <p class="realNumberMine">15</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNUxIz17vobrvs4KI-GeRul_zL_5fCay4",
+            authDomain: "chuluu-chat.firebaseapp.com",
+            projectId: "chuluu-chat",
+            storageBucket: "chuluu-chat.appspot.com",
+            messagingSenderId: "872184827877",
+            appId: "1:872184827877:web:7077143b748b778542290c"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().languageCode = 'mn'
+        const db = firebase.firestore();
+    </script>
+
+    <script src="guess-number-of-Shagai.js"></script>
+</body>
+
+</html>
