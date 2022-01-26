@@ -45,15 +45,15 @@
     border-radius: 4px;
     width: 60%;
     height: 85%;
-    padding: 10px 20px;
+    padding: 20px 40px;
 }
 
 .search-con {
     background-color: white;
     border-radius: 4px;
-    width: 30%;
+    width: 29%;
     height: 85%;
-    padding: 10px 20px;
+    padding: 20px 40px;
 }
 
 .search-inp-con {
@@ -77,8 +77,13 @@
     margin: 20px 0;
     background-color: #EEEEEE;
     border-radius: 4px;
+    padding: 20px 30px;
     flex: 1;
+    overflow-y: scroll;
 }
+.grey-drop::-webkit-scrollbar {
+    display: none;
+  }
 
 .drop-nav {
     width: 100%;
@@ -86,4 +91,28 @@
     background-color: rgb(99, 141, 99);
     transition: 1s;
     overflow: hidden;
+}
+.margin-left {
+    margin-left: 20px;
+}
+.name-imp, .name-father-imp {
+    outline: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+.img {
+    border: 1px solid black;
+    padding: 0px 2px;
+    border-radius: 3px;
+}
+.selection {
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.plus {
+    border: 1px solid black;
+    width: 21px;
+    height: 21px;
+    border-radius: 20000px;
 }
