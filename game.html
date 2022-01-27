@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel=stylesheet href="./game.css">
+</head>
+
+<body>
+    <div class="info">
+        <div class="reaction-section">
+            <span class="reaction-time">Reaction Time</span>
+            <span class="reaction-timer-sec">00</span>:<span class="reaction-timer-tens">00</span>
+            <span id="medeh"></span>
+        </div>
+        <span class="back-button">Back</span>
+    </div>
+    <div class="start-section">
+        <span id="seconds">00</span>:<span id="tens">00</span>
+        <button class="play-btn"> PLAY </button>
+    </div>
+    <div class="container"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAKmUsr7BzNM1FdVsp74qN_uXXLdUCtBOg",
+            authDomain: "reaction-game-90561.firebaseapp.com",
+            projectId: "reaction-game-90561",
+            storageBucket: "reaction-game-90561.appspot.com",
+            messagingSenderId: "182927717832",
+            appId: "1:182927717832:web:28e1548b6fa95b17923cfd"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth()
+    </script>
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>

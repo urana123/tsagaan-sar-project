@@ -146,9 +146,9 @@
         const login = document.querySelector('#login')
         const linkCreateAccount = document.querySelector('#linkCreateAccount')
         linkCreateAccount.onclick = () => {
-            window.location.assign(`./signup.html?=${docID}`)
+            let docID = location.search
+            window.location.assign(`./signup.html${docID}`)
         }
-
         login.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -159,6 +159,21 @@
                 .then((userCredential) => {
                     var user = userCredential.user;
                     console.log('amjilttai newterlee -->  ', user)
+                    if (location.search !== '') {
+                        docID = location.search.slice(2)
+                         window.location.assign(`./index.html?=${docID}`)
+
+                    } else { 
+                        const docRef = db.collection("game");
+                        docRef.add({
+                            player1: null,
+                            player2: null,
+                        }).then((doc) => {
+                            const id = doc.id;
+                             window.location.assign(`./index.html?=${id}`)
+                        })
+
+                    } 
                 })
                 .catch((error) => {
                     var errorCode = error.code;

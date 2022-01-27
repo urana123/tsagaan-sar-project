@@ -141,3 +141,7 @@ const cannotClickEl = () => {
         hide.style.readOnly = false
     }, 1400)
 }
+
+document.querySelector('.back-button').onclick = () => {
+    window.location.assign('./game-profile.html')
+}

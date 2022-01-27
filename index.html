@@ -16,7 +16,7 @@
             color: white;
             font-family: 'Pacifico', cursive;
         }
-        
+
         .container {
             width: 100%;
             max-height: 100vh;
@@ -27,18 +27,18 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .same {
             width: 100%;
         }
-        
+
         .first-con {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 1%;
         }
-        
+
         .second-con {
             margin-top: 4%;
             display: flex;
@@ -46,7 +46,7 @@
             justify-content: space-between;
             flex-direction: column;
         }
-        
+
         .third-con {
             margin-top: 3%;
             display: flex;
@@ -54,13 +54,13 @@
             justify-content: center;
             flex-direction: row;
         }
-        
+
         .line {
             width: 30%;
             background-color: white;
             border: white solid 1px;
         }
-        
+
         .btn {
             margin-left: 5%;
             color: #112667;
@@ -74,13 +74,13 @@
             border-radius: 10px;
             position: relative;
         }
-        
+
         .btn:hover {
             background-color: #112667;
             color: white;
             animation: blink .01s linear forwards;
         }
-        
+
         @keyframes blink {
             100% {
                 box-shadow: 0 0 5px #112667, 0 0 25px #112667, 0 0 50px #112667, 0 0 100px #112667, 0 0 150px #112667;
@@ -119,6 +119,34 @@
         </div>
 
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAKmUsr7BzNM1FdVsp74qN_uXXLdUCtBOg",
+            authDomain: "reaction-game-90561.firebaseapp.com",
+            databaseURL: "https://reaction-game-90561-default-rtdb.firebaseio.com",
+            projectId: "reaction-game-90561",
+            storageBucket: "reaction-game-90561.appspot.com",
+            messagingSenderId: "182927717832",
+            appId: "1:182927717832:web:28e1548b6fa95b17923cfd"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script>
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                
+            } else {
+                location.replace(`./login.html`);
+            }
+        });
+    </script>
 </body>
 
 </html>

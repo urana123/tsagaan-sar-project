@@ -62,7 +62,10 @@
     })
 
     const sendVerificationEmail = () => {
-        auth.currentUser.sendEmailVerification().then(() => {})
+        auth.currentUser.sendEmailVerification().then(() => {
+            docID = location.search
+            window.location.assign(`./login.html${docID}`)
+        })
     }
 </script>
 

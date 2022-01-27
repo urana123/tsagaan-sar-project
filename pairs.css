@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Pacifico', cursive
 }
 
 .main-section {
@@ -96,4 +97,10 @@
 .hide-card {
     pointer-events: none;
     z-index: 1;
+}
+
+.back-button{
+    position: fixed;
+    top: 1,5%;
+    right: 5%;
 }
