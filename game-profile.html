@@ -15,7 +15,7 @@
             margin: 0;
             font-family: 'Berkshire Swash', cursive;
         }
-        
+
         body {
             width: 100vw;
             height: 100vh;
@@ -23,44 +23,44 @@
             background-size: cover;
             background-image: url("https://cdn.discordapp.com/attachments/922302012341747803/932561781631631390/Screenshot_490.png");
         }
-        
+
         .h1shuu {
             display: flex;
             justify-content: center;
             font-family: 'Berkshire Swash', cursive;
             font-size: 50px;
         }
-        
+
         .logo {
             position: absolute;
             top: 30px;
             left: 30px;
         }
-        
+
         .row1 {
             position: absolute;
             top: 15%;
             left: 15%;
         }
-        
+
         .row2 {
             position: absolute;
             right: 15%;
             top: 15%;
         }
-        
+
         .row3 {
             position: absolute;
             left: 15%;
             top: 65%;
         }
-        
+
         .row4 {
             position: absolute;
             right: 15%;
-            top:65%;
+            top: 65%;
         }
-        
+
         .same {
             width: 20%;
             height: 35%;
@@ -69,7 +69,7 @@
             box-sizing: border-box;
             cursor: pointer;
         }
-        
+
         .btn {
             position: absolute;
             padding: 15px 32px;
@@ -79,7 +79,7 @@
             top: 30px;
             right: 30px;
         }
-        
+
         .flex-row {
             display: flex;
             flex-direction: row;
@@ -92,21 +92,27 @@
 <body>
     <p class="h1shuu">Mongolian Traditional Games</p>
     <div class="flex-row logo">
-        <img class="" src="https://cdn.discordapp.com/attachments/922302012341747803/936082025167859783/Screen_Shot_2022-01-27_at_10.15.40.png" width="50px"> Moon Lunar
+        <img class=""
+            src="https://cdn.discordapp.com/attachments/922302012341747803/936082025167859783/Screen_Shot_2022-01-27_at_10.15.40.png"
+            width="50px"> Moon Lunar
     </div>
 
 
     <a href="" onclick="shagaiShuureh(event)">
-        <img class="row4 same" src="https://cdn.discordapp.com/attachments/922302012341747803/932560088693088256/Screenshot_483.png">
+        <img class="row4 same"
+            src="https://cdn.discordapp.com/attachments/922302012341747803/932560088693088256/Screenshot_483.png">
     </a>
     <a href="./pairs.html">
-        <img class="row2 same" onclick="pairsGame()" src="https://cdn.discordapp.com/attachments/922302012341747803/932560087464173589/Screenshot_476.png">
+        <img class="row2 same" onclick="pairsGame()"
+            src="https://cdn.discordapp.com/attachments/922302012341747803/932560087464173589/Screenshot_476.png">
     </a>
     <a href="./guess-number-of-Shagai.html">
-        <img class="row3 same" onclick="chuluuTaah()" src="https://cdn.discordapp.com/attachments/922302012341747803/932560088282038343/Screenshot_482.png">
+        <img class="row3 same" onclick="chuluuTaah()"
+            src="https://cdn.discordapp.com/attachments/922302012341747803/932560088282038343/Screenshot_482.png">
     </a>
     <a href="./horse-racing.html">
-        <img class="row1 same" onclick="moriUraldah()" src="https://cdn.discordapp.com/attachments/922302012341747803/932560087183142962/Screenshot_474.png">
+        <img class="row1 same" onclick="moriUraldah()"
+            src="https://cdn.discordapp.com/attachments/922302012341747803/932560087183142962/Screenshot_474.png">
     </a>
 
     <div class="btn" onclick="history.back()">Back</div>
@@ -133,54 +139,26 @@
     </script>
 
     <script>
-        function shagaiShuureh (e) {
+        function shagaiShuureh(e) {
             e.preventDefault();
             if (location.search !== '') {
-                                   docID = location.search.slice(2)
-                                   location.replace(`./game.html?=${docID}`)
-                                    console.log('adad')
-                                } else { 
-                                    let docRef = db.collection("shagai");
-                                    console.log(docRef, "asdfsdf")
-                                    docRef.add({
-                                        player1: null,
-                                        player2: null,
-                                    }).then((doc) => {
-                                       const id = doc.id;
-                                       location.replace(`./game.html?=${id}`)
-                                   })
-           
-                               } 
+                docID = location.search.slice(2)
+                location.replace(`./game.html?=${docID}`)
+                console.log('adad')
+            } else {
+                let docRef = db.collection("shagai");
+                console.log(docRef, "asdfsdf")
+                docRef.add({
+                    player1: null,
+                    player2: null,
+                }).then((doc) => {
+                    const id = doc.id;
+                    location.replace(`./game.html?=${id}`)
+                })
+
+            }
 
         }
-        // const login = document.querySelector('#login')
-        // const linkCreateAccount = document.querySelector('#linkCreateAccount')
-        // linkCreateAccount.onclick = () => {
-        //     docID = location.search.slice(15)
-        //     window.location.assign(`./signup.html?=${docID}`)
-
-        // }
-
-        // login.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-
-        //     const email = login['login-email'].value
-        //     const password = login['login-password'].value
-
-        //     firebase.auth().signInWithEmailAndPassword(email, password)
-        //         .then((userCredential) => {
-        //             var user = userCredential.user;
-        //             console.log('amjilttai newterlee -->  ', user)
-
-                   
-
-        //         })
-        //         .catch((error) => {
-        //             var errorCode = error.code;
-        //             var errorMessage = error.message;
-        //             console.log(errorCode)
-        //         });
-        // })
 
     </script>
 
