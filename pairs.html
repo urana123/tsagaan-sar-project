@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="./pairs.css">
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <div class="main-section">
+        <div class="matched">
+            <span>Matched:</span><span class="point">0</span><span>/12</span>
+        </div>
+        <div class="timer">
+            <span>Time</span>
+            <span class="timer-min">00</span>:<span class="timer-sec">00</span>
+        </div>
+        <div class="container"></div>
+        <div class="hide"></div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js%22%3E</script"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js%22%3E"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyASGmpY3XZQFg1eXS1bUVF03ZwbGJW6G88",
+            authDomain: "memory-game-726ae.firebaseapp.com",
+            projectId: "memory-game-726ae",
+            storageBucket: "memory-game-726ae.appspot.com",
+            messagingSenderId: "226894761106",
+            appId: "1:226894761106:web:ed51a3bb49d4d1cd0faa4b"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <script src='./pairs.js'></script>
+
+
+</body>
+
+</html>

@@ -401,5 +401,5 @@ function tailbarFun(event) {
 }
 
 function backFun() {
-    // location.replace('./login.html')
+    location.replace('./game-profile.html')
 }

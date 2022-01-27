@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <title>Tsagaan Sar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="horse-racing.css">
+
+    <body>
+        <div class="nav flex">
+            <h1>Морин Уралдаан</h1>
+        </div>
+
+        <a href="./game-profile.html" class="back-btn">
+            Back
+        </a>
+
+        <div class="container flex-column ">
+            <div id="player1Road ">
+                <div class="player-1 ">
+                    <img class="playerLeft " src="./guess-mori.png " alt=" " width="100px " />
+                </div>
+            </div>
+            <div class="road flex "></div>
+            <div id="player2Road ">
+                <div class="player-2 ">
+                    <img class="playerRight " src="./guess-mori.png " alt=" " width="100px " />
+                </div>
+            </div>
+        </div>
+        <div class="controller ">
+            <div>
+                <img class="img1 " src="./guess-mori.png " alt="mori " width="100px " />
+            </div>
+            <div>
+                <img class="img2 " src="./guess-honi.png " alt="honi " width="100px " />
+            </div>
+            <div>
+                <img class="img3 " src="./guess-ymaa.png " alt="ymaa " width="100px " />
+            </div>
+            <div>
+                <img class="img4 " src="./guess-temee.png " alt="temee " width="100px " />
+            </div>
+        </div>
+        <button id="start " onclick="onClickStart() ">Start Player1!</button>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js "></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js "></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js "></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js "></script>
+
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyCgJQ4o--L2eXUIZKNwUi6_Vuu4nXxvD7E ",
+                authDomain: "moriuraldaan.firebaseapp.com ",
+                projectId: "moriuraldaan ",
+                storageBucket: "moriuraldaan.appspot.com ",
+                messagingSenderId: "1050377419976 ",
+                appId: "1:1050377419976:web:8d0055f1a88c622bfbf9fd ",
+            };
+            firebase.initializeApp(firebaseConfig);
+            firebase.auth().languageCode = "mn ";
+            const db = firebase.firestore();
+        </script>
+        <script src="./horse-racing.js "></script>
+    </body>
+
+</html>

@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(105, 152, 171);
+}
+
+.container {
+    height: 90%;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.row {
+    height: 24%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card {
+    height: 100%;
+    width: 16.5%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform-origin: 50% 50%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.front {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/reaction-game-90561.appspot.com/o/mongolger.png?alt=media&token=7ea64ecf-3e4b-46a8-9f06-22fc1cb45ec2%27);');
+    background-size: cover;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.back,
+.front {
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.matched {
+    position: absolute;
+    top: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+.timer {
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+.hide {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.hide-card {
+    pointer-events: none;
+    z-index: 1;
+}

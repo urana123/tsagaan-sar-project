@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    background-color: #406882;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    font-family: 'Pacifico', cursive;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav {
+    background-color: #fff;
+    font-family: 'Pacifico', cursive;
+}
+
+.nav h1 {
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+nav {
+    border-radius: 10px;
+    margin: 0px 10px;
+    height: 60px;
+    width: 13%;
+    background-image: url("./images/nav-img.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+}
+
+.road {
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.mori {
+    margin-right: -20px;
+    width: 100px;
+    min-width: 100px;
+    height: 85px;
+    background-size: contain;
+}
+
+.playerLeft {
+    transition: all 1s ease 0s;
+}
+
+.playerRight {
+    transition: all 1s ease 0s;
+}
+
+.player-1 {
+    margin-left: 120px;
+}
+
+.player-2 {
+    margin-left: 120px;
+}
+
+.controller {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+    background-color: #1A374D;
+    margin: auto;
+    border-radius: 10px;
+}
+
+button {
+    display: block;
+    text-align: center;
+    margin: 1em auto 0;
+    border-radius: 6px;
+    font-size: 28px;
+    color: #ffc600;
+    background: #222;
+    font-weight: bold;
+    line-height: 32px;
+    transition: .3s;
+    padding: 18px;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    background: black;
+}
+
+.back-btn {
+    font-family: 'Berkshire Swash', cursive;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}

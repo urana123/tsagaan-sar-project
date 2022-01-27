@@ -60,10 +60,10 @@
     background-color: #00BB78;
 }
 
-@media only screen and (max-width: 1366) {
+@media only screen and (max-width: 1366px) {
     .main-body {
         position: relative;
-        width: 30%;
+        min-width: 30%;
         height: 500px;
         border-radius: 40px;
         background-color: #00BB78;
@@ -115,4 +115,13 @@
     position: absolute;
     top: calc(100% + 50%);
     left: calc(-116.5%);
+}
+
+.board {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border: 1px solid black;
+    width: 80%;
+    height: 80%;
 }
